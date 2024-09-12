@@ -1,0 +1,56 @@
+<p>payment works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonePe - Payment</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-card" *ngIf="whatToShow==0">
+            <h2>Payment</h2>
+            
+            <div class="input-group">
+                <label for="upi-id">Mobile Number Or UPI ID </label>
+                <input type="text" id="upi-id"[(ngModel)]="upiId" placeholder="Enter UPI ID">
+            </div>
+            <div class="form-group">
+                <label for="bankAccount" class="input-group">Select Your Bank</label>
+                <select id="bankAccount" class="form-control" [(ngModel)]="selectedBank" placeholder="Select Bank">
+                    <option id="bankAccount" value="" selected disabled>Select Bank</option>
+                    <option *ngFor="let item of linkedBankList" [value]="item">{{ item.bankName }}</option>
+                </select>
+            </div>
+           
+            <button class="pay-button" (click)="onClick()">Proceed to Pay</button>
+        </div>
+        <div *ngIf="whatToShow==1">
+            <div class ="input-group">
+                <p>Receiver Name :{{reciverName}}</p>
+                <p>Receiver Bank :{{reciverbankName}}</p>
+            </div>
+            <div class="input-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount"[(ngModel)]="ammount" placeholder="Enter amount">
+            </div>
+            <div class="input-group">
+                <label for="upiping">Enter UPI PIN</label>
+                <input type="number" id="upiping"[(ngModel)]="UPIPin" placeholder="Enter UPI PIN">
+            </div>
+            <div class="input-group">
+                <label for="remarks"></label>
+                <textarea id="remarks"[(ngModel)]="remarks" placeholder="Add a note (optional)"></textarea>
+            </div>
+            <button class="pay-button" (click)="onPayment()"> Pay </button>
+        </div>
+        <div class="success-container" *ngIf="whatToShow==3">
+            <div class="success-icon">✔️</div>
+            <h1>Payment Successful!</h1>
+            <p>Your payment was processed successfully. Thank you for your transaction.</p>
+            <button (click)="onHome()">Go to Homepage</button>
+        </div>
+    </div>
+</body>
+</html>

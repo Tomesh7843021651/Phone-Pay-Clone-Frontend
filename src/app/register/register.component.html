@@ -1,0 +1,67 @@
+<!-- <p>register works!</p>
+Enter mobile number : <input type="number" [(ngModel)] ="number" ><br>
+
+<div *ngIf="showOtp == 0">
+
+<button (click)="register()">register</button></div>
+<div *ngIf="showOtp == 1">
+    enter otp: <input type="number" [(ngModel)] ="otp"><br>
+<button (click)="verify()">verify</button></div>
+<div *ngIf="showOtp == 2">
+    pin:<input type="number" [(ngModel)]="pin"><br>
+    confirm pin:<input type="number" [(ngModel)]="pin2"><br>
+<button (click)="setpin()">setpin</button></div> -->
+
+<!-- new one -->
+<div class="register-container">
+        
+    <div class="register-box">
+        <h2>Register</h2>
+        <form (ngSubmit)="onClick()"  *ngIf="whatToDo==0">
+            <div class="input-group">
+                <label for="username">Mobile Number</label>
+                <input type="text" id="username"[(ngModel)]="mobNumber" name="username" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+            <div class="login-link">
+                <p>Already have an account? <a href="#">Login here</a></p>
+            </div>  
+        </form>
+          <form (ngSubmit)="onSumbit()" *ngIf="whatToDo==1">
+            <div class="input-group" >
+                <label for="username">Enter OTP</label>
+                <input type="text" id="username"[(ngModel)]="otp" name="OTP" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+        </form>
+        <form (ngSubmit)="onSumbitPassword()" *ngIf="whatToDo==2">
+            <div class="input-group" >
+                <label for="username">Enter Password</label>
+                <input type="text" id="username"[(ngModel)]="password" name="password" required>
+            </div>
+            <div class="input-group">
+              <label for="conformPassword">Conform Password</label>
+              <input type="text" id="conformPassword" [(ngModel)]="conformPassword" name="conformPassword" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+        </form>
+        <form (ngSubmit)="onSumbitPin()" *ngIf="whatToDo==3">
+            <div class="input-group" >
+                <label for="username">Enter PIN</label>
+                <input type="number" id="username"[(ngModel)]="upiPin" name="upiPin" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+        </form>
+       
+    </div>
+</div>
+
+

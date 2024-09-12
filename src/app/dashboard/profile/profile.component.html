@@ -1,0 +1,31 @@
+<p>profile works!</p>
+<div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <!-- <img src="assets/profile.jpg" alt="User Avatar" class="profile-avatar"> -->
+            <h2 class="profile-name">{{phonePayUserProp.name}}</h2>
+            
+            <p class="profile-phone">{{phonePayUserProp.mobNumber}}</p>
+        </div>
+        <div class="profile-details">
+            <div class="detail-item">
+                <span class="detail-title">UPI ID:</span>
+                <span class="detail-value">{{userInfo[0]}}</span>
+            </div>
+            <div class="detail-item">
+                
+                <span class="detail-title">Email:</span>
+                <span class="detail-value">{{userInfo[3]}}</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-title">KYC Status:</span>
+                <span class="detail-value">Completed</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-title">Linked Bank:</span>
+                <span class="detail-value">{{userInfo[2]}}</span>
+            </div>
+           
+        </div>
+    </div>
+</div>

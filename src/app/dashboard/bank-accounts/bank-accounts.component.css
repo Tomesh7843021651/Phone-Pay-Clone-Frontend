@@ -1,0 +1,56 @@
+.bank-list {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+  }
+  
+  .bank-list th, .bank-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .bank-list th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .bank-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .bank-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .bank-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .bank-list td button {
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .bank-list td button:hover {
+    background-color: #005f7a;
+  }
+  
+  .bank-list td input {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80%;
+  }
+  
+  .bank-list td input[type="password"] {
+    width: 50%;
+  }
+  

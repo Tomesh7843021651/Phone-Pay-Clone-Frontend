@@ -1,0 +1,63 @@
+<p>bank-accounts works!</p>
+<div>
+    <h2> Link Bank Accounts</h2>
+    <table class="bank-list">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Bank Name</th>
+            <th>Account Number</th>
+            <th>IFSC Code</th>
+            <th>Upi Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of linkdbankList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.bankName }}</td>
+            <td>{{ item.accountNumber }}</td>
+            <td>{{ item.ifsc }}</td>
+            <td>{{ item.upiId }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div>
+        <h2>Non Link Bank Accounts</h2>
+        <table class="bank-list">
+            <thead>
+              <tr>
+                <th>Sr no</th>
+                <th>Bank Name</th>
+                <th>Account Number</th>
+                <th>IFSC Code</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr *ngFor="let item of bankList; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.bankName }}</td>
+                <td>{{ item.accountNumber }}</td>
+                <td>{{ item.ifscCode }}</td>
+                <td><button (click)="onClick(item.userId)">Link</button></td>
+              </tr>
+              <tr *ngIf="whatToShow == 1">
+                <td colspan="5">
+                  <div>
+                    Otp: <input type="text"[(ngModel)]="otp" placeholder="Enter OTP">
+                    <br>
+                    UpiPin: <input type="password"[(ngModel)]="upiPin" placeholder="Enter UPI Pin">
+                    <br>
+                    <button (click)="linkAccount()">Link Account</button>
+                  </div>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+          
+    
+        </div>

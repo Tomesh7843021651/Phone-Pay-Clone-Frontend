@@ -1,0 +1,134 @@
+<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <!-- <img src="assets/logo.png"> -->
+        </div>
+        {{phonePayUserProp.mobNumber}}
+        <ul class="menu">
+            <li><a  (click)="onClick(0)">Home</a></li>
+            <li><a (click)="onClick(1)">Profile</a></li>
+            <li><a (click)="onClick(3)">Payments</a></li>
+            <li><a (click)="onClick(6)">Wallet</a></li>
+            <li><a routerLink="">Logout</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <!-- <button class="login-button" (click)="onClick()">Login</button> -->
+                <p>{{phonePayUserProp.name}}</p>
+                <!-- <img src="assets/img.png" alt="User Icon" class="enlarged-image"> -->
+            </div>
+        </div>
+        
+        <div class="cards">
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Balance</h3>
+                <p><a (click)="onClick(5)">Check Balance</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Recent Transactions</h3>
+                <p><a (click)="onClick(4)">View all</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3> Accounts</h3>
+                <p><a (click)="onClick(2)">Add Bank Account</a></p>
+            </div>
+           
+        </div>
+        
+        <div class="cards">
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Offers</h3>
+                <p><a (click)="onClick(6)">Check Now</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Recharges</h3>
+                <p><a (click)="onClick(6)">Mobile Recharge</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Pay Bills</h3>
+                <p><a (click)="onClick(6)">Electricity</a></p>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Book Trains</h3>
+                <p><a (click)="onClick(2)">Trains</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Card Payment</h3>
+                <p><a (click)="onClick(6)">Credit Card Payment</a></p>
+            </div>
+            <div class="card" *ngIf="whatToShow==0">
+                <h3>Rent</h3>
+                <p><a (click)="onClick(6)">Home Rent</a></p>
+            </div>
+        </div>    
+
+        <div *ngIf="whatToShow==1">
+         <app-profile ></app-profile>
+        </div>
+        <!-- <div *ngIf="whatToShow==0">
+         <app-home ></app-home>
+        </div> -->
+
+        <div *ngIf="whatToShow==2">
+            <app-bank-accounts ></app-bank-accounts>
+        </div>
+        <div *ngIf="whatToShow==3">
+            <app-payment></app-payment>
+        </div>
+            <div *ngIf="whatToShow==4" class="content"  >
+                <h2>Transaction History</h2>
+                <!-- Transaction table or other content here -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Status</th>
+                    <th>Comment</th>
+                    <th>Time</th>
+                    <th>Amount</th>
+                    <th>Bank Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of transacations,let i=index">
+                    <td>{{i+1}}</td>
+                    <td [ngClass]="{'debit': item.crdp === 'Debited', 'credit': item.crdp === 'Credited'}">{{item.crdp}}</td>
+                    <td>{{item.commit}}</td>
+                    <td>{{item.currDate}}</td>
+                    <td>{{item.balance}}</td>
+                    <td>{{item.afterBalance}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="balancebody">
+        <div class="balance-container" *ngIf="whatToShow === 5">
+            <h1 class="balancehead">Your Bank Accounts</h1>
+            <div *ngFor="let bank of checkBalance" class="balance-card">
+                <h2>{{ bank.bankName }}</h2>
+                <p class="balance-amount">₹{{ bank.bankBalance | number:'1.2-2' }}</p>
+            </div>
+
+        </div> 
+    </div>
+     
+    <div *ngIf="whatToShow==6">
+     <h1>Under Devlopment!!!</h1>
+    </div>
+    </div>
+</body>
+</html>

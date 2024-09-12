@@ -1,0 +1,165 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+
+.payment-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+}
+
+.payment-card h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #2ebf91;
+    outline: none;
+}
+
+.pay-button {
+    background-color: #2ebf91;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.pay-button:hover {
+    background-color: #27a57b;
+}
+
+.pay-button:active {
+    transform: scale(0.98);
+}
+/* Container for the dropdown */
+div {
+    margin: 20px 0;
+}
+
+/* Style for the label */
+.input-group {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style for the select dropdown */
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Change border color on focus */
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style for the dropdown options */
+.form-control option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Optional: add some hover effects */
+.form-control option:hover {
+    background-color: #f1f1f1;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.success-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+    font-size: 50px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
